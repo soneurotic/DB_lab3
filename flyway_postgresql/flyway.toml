@@ -1,0 +1,27 @@
+databaseType = "PostgreSql"
+id = "b18b4c28-8be7-4ae8-b110-9120fc5f875c"
+name = "flyway_postgresql"
+
+[flyway]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+validateMigrationNaming = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+schemaModel = "schema-model"
+shadowEnvironment = "shadow"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.postgresql]
+url = "jdbc:postgresql://localhost:5432/postgres_lab3_db"
+schemas = [ "public" ]

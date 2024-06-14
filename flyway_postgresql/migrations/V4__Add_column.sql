@@ -1,0 +1,1 @@
+ALTER TABLE world_weather ADD COLUMN touch_some_grass boolean GENERATED ALWAYS AS (wind_kph < 36.0) STORED;
